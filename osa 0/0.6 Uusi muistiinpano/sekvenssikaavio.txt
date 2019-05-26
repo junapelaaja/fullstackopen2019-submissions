@@ -1,0 +1,15 @@
+note over selain
+Lomakkeen onsubmit-event handleri
+lähettää uuden muistiinpanon pal-
+velimelle
+end note
+selain->palvelin: HTTP POST https://fullstack-exampleapp.herokuapp.com/new_note_spa
+palvelin-->selain: Status 201 - Luotu
+note over selain
+onsubmit myös lisää muistiinpanon
+notes-taulukkoon ja suorittaa
+redraw-komennon (käy läpi notes-taulukon,
+poistaa edellisen ul-elementin,
+luo uuden ja lisää notes-taulukon
+mukaiset li-elementit)
+end note

@@ -1,0 +1,25 @@
+selain->palvelin: HTTP GET https://fullstack-exampleapp.herokuapp.com/spa
+palvelin-->selain: HTML-koodi
+selain->palvelin: HTTP GET https://fullstack-exampleapp.herokuapp.com/main.css
+palvelin-->selain: Tyylitiedot main.css-tiedostossa
+selain->palvelin: HTTP GET https://fullstack-exampleapp.herokuapp.com/spa.js
+palvelin-->selain: JavaScript-koodit spa.js-tiedostossa
+
+note over selain:
+selain suorittaa JavaScriptin, joka käskee
+tekemään Ajax-pyynnön JSON-datan saamiseksi
+end note
+
+selain->palvelin: HTTP GET https://fullstack-exampleapp.herokuapp.com/data.json
+palvelin-->selain: [ Object, Object, ...]
+
+note over selain:
+selain suorittaa 'onreadystatechange'-
+event listenerin, joka käskee selainta
+lisäämään muistiinpanot
+ul-elementin sisään li-elementteinä
+DOM-APIa hyödyntäen (ja poistaa
+"vanhat" muistiinpanot, jos niitä
+on jo #notes-elementissä) redrawNotes-
+funktion avulla
+end note

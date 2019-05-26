@@ -1,0 +1,33 @@
+selain->palvelin: HTTP POST https://fullstack-exampleapp.herokuapp.com/new_note
+palvelin-->selain: 302 Uudelleenohjaus: https://fullstack-exampleapp.herokuapp.com/notes
+
+note over selain:
+selain palaa /notes-sivulle
+samoin kuin aikaisemminkin
+sinne päästiin:
+end note
+
+selain->palvelin: HTTP GET https://fullstack-exampleapp.herokuapp.com/notes
+palvelin-->selain: HTML
+note over selain:
+selain alkaa näyttää nettisivua, mutta
+sivu ei ole vielä välttämättä
+kokonaan latautunut
+end note
+selain->palvelin: HTTP GET https://fullstack-exampleapp.herokuapp.com/main.css
+palvelin-->selain: Tyylitiedot main.css-tiedostossa
+selain->palvelin: HTTP GET https://fullstack-exampleapp.herokuapp.com/main.js
+palvelin-->selain: JavaScript-koodit main.js-tiedostossa
+
+note over selain:
+selain suorittaa JavaScriptin, joka käskee
+tekemään Ajax-pyynnön JSON-datan saamiseksi
+end note
+
+selain->palvelin: HTTP GET https://fullstack-exampleapp.herokuapp.com/data.json
+palvelin-->selain: [ Object, Object, ...]
+
+note over selain:
+selain suorittaa 'onreadystatechange'-
+event listenerin
+end note
