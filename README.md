@@ -1,0 +1,1 @@
+Lisätietoa täällä: https://fullstackopen.com
